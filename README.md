@@ -1,3 +1,3 @@
 ## Demo
 
-https://boll-dall-ini.netlify.app
+https://know-city-redux.netlify.app/
