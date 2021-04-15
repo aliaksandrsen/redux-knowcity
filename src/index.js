@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 
 import rootReducer from './store';
 
@@ -14,6 +14,8 @@ const composeEnhancers = composeWithDevTools({
   trace: true,
   traceLimit: 10,
 });
+
+const logger = createLogger({ collapsed: true });
 
 const store = createStore(
   rootReducer,
