@@ -17,9 +17,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = {
-  setEmail,
-  setPassword,
+// short version
+// const mapDispatchToProps = {
+//   setEmail,
+//   setPassword,
+// };
+
+// full version
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setEmail: (email) => dispatch(setEmail(email)),
+    setPassword: (password) => dispatch(setPassword(password)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer);
