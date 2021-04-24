@@ -1,34 +1,17 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { emailSelector, passwordSelector } from '../../store/auth/reducers';
 import Auth from './Auth';
-import { connect } from 'react-redux';
 
-import { setEmail, setPassword } from '../../store/auth/actions';
+const AuthContainer = (props) => {
+  const dispatch = useDispatch();
+  const email = useSelector(emailSelector);
+  const password = useSelector(passwordSelector);
 
-class AuthContainer extends React.Component {
-  render() {
-    return <Auth {...this.props} />;
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    email: state.auth.email,
-    password: state.auth.password,
-  };
+  return (
+    <Auth {...props} email={email} password={password} dispatch={dispatch} />
+  );
 };
 
-// short version
-// const mapDispatchToProps = {
-//   setEmail,
-//   setPassword,
-// };
-
-// full version
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setEmail: (email) => dispatch(setEmail(email)),
-    setPassword: (password) => dispatch(setPassword(password)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer);
+export default AuthContainer;

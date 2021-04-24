@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Auth = ({ email, password, setEmail, setPassword }) => {
+import { setEmail, setPassword } from '../../store/auth/actions';
+
+const Auth = ({ email, password, dispatch }) => {
+  // не нужно указывать setEmail в deps
+  // useEffect(() => {
+  //   setEmail('aaa@gmail.com');
+  // }, []);
+
   const onEmailChange = (event) => {
-    setEmail(event.target.value);
+    dispatch(setEmail(event.target.value));
   };
 
   const onPasswordChange = (event) => {
-    setPassword(event.target.value);
+    dispatch(setPassword(event.target.value));
   };
 
   return (

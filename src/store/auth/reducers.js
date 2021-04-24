@@ -17,3 +17,6 @@ export const authReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export const emailSelector = (state) => state.email;
+export const passwordSelector = (state) => state.password;
