@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Auth from './components/Auth/AuthContainer';
+import Auth from './components/Auth/Auth';
 import Registration from './components/Registration/RegistrationContainer';
 import Debug from './components/Debug/DebugContainer';
 
