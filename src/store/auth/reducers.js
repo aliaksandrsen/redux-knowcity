@@ -18,5 +18,5 @@ export const authReducer = (state = initialState, action) => {
   }
 };
 
-export const emailSelector = (state) => state.email;
-export const passwordSelector = (state) => state.password;
+export const emailSelector = (state) => state.auth.email;
+export const passwordSelector = (state) => state.auth.password;
