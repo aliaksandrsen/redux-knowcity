@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React /* , { useEffect } */ from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setEmail, setPassword } from '../../store/auth/actions';
@@ -9,10 +9,11 @@ const Auth = () => {
 
   const email = useSelector(emailSelector);
   const password = useSelector(passwordSelector);
+
   // не нужно указывать setEmail в deps
   // useEffect(() => {
-  //   setEmail('aaa@gmail.com');
-  // }, []);
+  //   dispatch(setEmail('aaa@gmail.com'));
+  // }, [dispatch]);
 
   const onEmailChange = (event) => {
     dispatch(setEmail(event.target.value));
